@@ -17,10 +17,41 @@
 typedef struct
 {
     int dim[3][3];
-    int nivel; 
-}Dados;
+    int dificuldade;
+    int vez;
+}dados;
+
+dados v;
 
 // Funções estabelecidas.
-int nivelfacil(int tab[3][3],int vez); // Nível fácil 
-int nivelmedio(int tab[3][3],int vez); // Nível médio 
-int niveldificil(int tab[3][3],int vez); // Nível difícil 
+int nivelfacil(int dim[3][3],int vez); // Nível fácil 
+int nivelmedio(int dim[3][3],int vez); // Nível médio 
+int niveldificil(int dim[3][3],int vez); // Nível difícil
+// Possíveis funções do jogo da velha.
+int inicio(void); // Base do programa.
+int tabuleiro(void); // Imprimir o tabuleiro.
+int menu(void); // Escolha da dificuldade.
+
+int menu(void)
+{
+    int dificuldade;
+    printf("Escolha o nível de dificuldade que você quer jogar: \n");
+    printf("1 -> Fácil \n2 -> Médio \n3 -> Difícil");
+    scanf("%d", &dificuldade);
+    switch(dificuldade)
+    {
+        case 1:
+            nivelfacil ();
+            break;
+        case 2:
+            nivelmedio();
+            break;
+        case 3:
+            niveldificil();
+            break;
+        default:
+            printf("ERRO: Você digitou errado :)");
+            break;
+    }
+    return dificuldade;
+}
