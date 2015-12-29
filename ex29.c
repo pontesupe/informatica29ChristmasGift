@@ -14,15 +14,6 @@
 
 #define DIMTAB 3 // Dimensão da tabela do jogo da velha (3x3).
 
-typedef struct
-{
-    int dim[3][3];
-    int dificuldade;
-    int vez;
-}dados;
-
-dados v;
-
 // Funções estabelecidas.
 int nivelfacil(int dim[3][3],int vez); // Nível fácil 
 int nivelmedio(int dim[3][3],int vez); // Nível médio 
